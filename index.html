@@ -7,26 +7,28 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background: url('1000000814.jpg') no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             overflow: hidden;
+            backdrop-filter: blur(4px);
         }
 
         .container {
             display: flex;
             width: 800px;
             height: 400px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.2);
             border-radius: 20px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             opacity: 1;
             transform: translateY(0);
             transition: opacity 0.5s ease, transform 0.5s ease;
+            backdrop-filter: blur(10px);
         }
 
         .container.fade-out {
@@ -35,8 +37,8 @@
         }
 
         .left-side {
-            background-color: #5c8df6;
-            color: #fff;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #000;
             padding: 40px;
             width: 40%;
             display: flex;
@@ -50,6 +52,7 @@
         .left-side h1 {
             font-size: 32px;
             margin-bottom: 10px;
+            color: #333;
         }
 
         .left-side p {
@@ -81,12 +84,17 @@
             width: calc(100% - 20px);
             padding: 14px;
             padding-left: 40px;
-            border: 1px solid #ccc;
+            border: 1px solid rgba(255, 255, 255, 0.5);
             border-radius: 8px;
             outline: none;
             font-size: 16px;
-            background-color: #fafafa;
+            background-color: rgba(255, 255, 255, 0.3);
             transition: border 0.3s ease;
+            color: #000;
+        }
+
+        input[type="password"]::placeholder {
+            color: rgba(0, 0, 0, 0.5);
         }
 
         input[type="password"]:focus {
@@ -99,7 +107,7 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: 18px;
-            color: #aaa;
+            color: #000;
         }
 
         .btn {
