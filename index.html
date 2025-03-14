@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mot de passe requis</title>
+    <script>
+        function checkPassword() {
+            const password = prompt("Entrez le mot de passe pour accéder au site :");
+            if (password === "monmotdepasse") {
+                document.getElementById("content").style.display = "block";
+                document.getElementById("locked").style.display = "none";
+            } else {
+                alert("Mot de passe incorrect !");
+                window.location.reload(); // Recharge la page si le mot de passe est incorrect
+            }
+        }
+    </script>
 </head>
-<body>
-    <h1>Bienvenue sur mon site !</h1>
-    <p>Ceci est mon texte à partager.</p>
+<body onload="checkPassword()">
+    <div id="locked" style="display: block;">
+        <h1>Accès protégé</h1>
+        <p>Veuillez entrer le mot de passe pour continuer.</p>
+    </div>
+
+    <div id="content" style="display: none;">
+        <h1>Bienvenue sur mon site !</h1>
+        <p>Ceci est le contenu protégé par mot de passe.</p>
+    </div>
 </body>
 </html>
