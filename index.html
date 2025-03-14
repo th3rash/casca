@@ -44,25 +44,8 @@
         }
 
         .left-side p {
-            font-size: 16px;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .left-side .btn-register {
-            padding: 12px 24px;
-            background-color: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 16px;
-        }
-
-        .left-side .btn-register:hover {
-            background-color: #fff;
-            color: #5c8df6;
+            font-size: 18px;
+            opacity: 0.8;
         }
 
         .right-side {
@@ -71,70 +54,60 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
             text-align: center;
         }
 
-        .right-side h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .input-group {
+        .input-box {
             position: relative;
             margin-bottom: 20px;
         }
 
-        .input-group input {
-            width: 100%;
-            padding: 12px 16px;
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 14px;
             padding-left: 40px;
             border: 1px solid #ccc;
             border-radius: 8px;
-            font-size: 16px;
             outline: none;
-            transition: border-color 0.3s;
+            font-size: 16px;
+            background-color: #fafafa;
+            transition: border 0.3s ease;
         }
 
-        .input-group input:focus {
+        input[type="password"]:focus {
             border-color: #5c8df6;
         }
 
-        .input-group i {
+        .icon {
             position: absolute;
-            left: 12px;
+            left: 14px;
             top: 50%;
             transform: translateY(-50%);
-            color: #aaa;
             font-size: 18px;
+            color: #aaa;
         }
 
-        .btn-login {
-            padding: 12px;
+        .btn {
             background-color: #5c8df6;
             color: #fff;
+            padding: 14px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             width: 100%;
             font-size: 16px;
             transition: background-color 0.3s ease;
-        }
-
-        .btn-login:hover {
-            background-color: #4a76d4;
-        }
-
-        .forgot-password {
             margin-top: 10px;
-            font-size: 14px;
-            color: #5c8df6;
-            cursor: pointer;
-            transition: color 0.3s ease;
         }
 
-        .forgot-password:hover {
-            color: #4a76d4;
+        .btn:hover {
+            background-color: #4a76d4;
         }
     </style>
 </head>
@@ -143,27 +116,20 @@
 <div class="container">
     <!-- Partie gauche -->
     <div class="left-side">
-        <h1>Hello, Welcome!</h1>
-        <p>Pour accéder au site, entrez le mot de passe correct.</p>
-        <button class="btn-register" onclick="alert('Pas encore disponible 😎')">Register</button>
+        <h1>Bienvenue !</h1>
+        <p>Veuillez entrer le mot de passe pour continuer.</p>
     </div>
 
     <!-- Partie droite -->
     <div class="right-side">
         <h2>Connexion</h2>
-        <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="password" placeholder="Mot de passe" />
+        <div class="input-box">
+            <span class="icon">🔒</span>
+            <input type="password" id="password" placeholder="Entrez le mot de passe" />
         </div>
-        <button class="btn-login" onclick="checkPassword()">Se connecter</button>
-        <div class="forgot-password" onclick="alert('Mot de passe oublié ? 😅')">
-            Mot de passe oublié ?
-        </div>
+        <button class="btn" onclick="checkPassword()">Se connecter</button>
     </div>
 </div>
-
-<!-- Font Awesome pour les icônes -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <script>
     function checkPassword() {
