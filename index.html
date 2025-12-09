@@ -12,6 +12,10 @@
         <p>J'ai écrit quelque chose pour toi...</p>
         <p>Mais d'abord, quel est ton prénom ?</p>
         
+        <p style="font-size: 0.8em; color: #db2777; margin-top: -10px;">
+            (Indice : La première lettre est une majuscule)
+        </p>
+        
         <input type="text" id="passwordInput" placeholder="Ton prénom...">
         <button onclick="checkPassword()">Entrer</button>
         <p id="errorMessage" style="color: red; display: none;">Ce n'est pas le bon prénom !</p>
@@ -19,9 +23,10 @@
 
     <script>
         function checkPassword() {
-            var password = document.getElementById("passwordInput").value;
-            // CHANGE "sophie" PAR SON VRAI PRÉNOM (gardes les guillemets "")
-            if (password.toLowerCase() === "sophie") {
+            var password = document.getElementById("passwordInput").value.trim(); // .trim() enlève les espaces accidentels
+            
+            // On vérifie que c'est exactement "Ambre" avec la majuscule
+            if (password === "Ambre") {
                 window.location.href = "menu.html";
             } else {
                 document.getElementById("errorMessage").style.display = "block";
