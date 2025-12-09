@@ -16,16 +16,27 @@ body {
     min-height: 100vh;
 }
 
+/* La "carte" au milieu - Version améliorée pour mieux se fondre */
 .container {
-    background-color: rgba(255, 255, 255, 0.90); /* Blanc un peu transparent */
+    /* Fond blanc beaucoup plus transparent pour laisser voir les fleurs */
+    background-color: rgba(255, 255, 255, 0.75);
+    
     padding: 50px 40px;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(219, 39, 119, 0.2);
+    border-radius: 30px; /* Coins encore plus arrondis pour la douceur */
+    
+    /* Ombre beaucoup plus douce et diffuse, moins "rose" pour être plus naturel */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    
     text-align: center;
     max-width: 450px;
     width: 90%;
-    border: 1px solid rgba(251, 207, 232, 0.8);
-    backdrop-filter: blur(3px);
+    
+    /* Bordure blanche très subtile pour un effet "verre poli" */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    /* Effet de flou important derrière la carte (effet verre dépoli) */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px); /* Important pour les iPhone */
 }
 
 h1 {
