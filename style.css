@@ -1,102 +1,91 @@
-/* Import d'une jolie police cursive depuis Google Fonts */
+/* Import d'une jolie police cursive */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;1,400&display=swap');
 
-/* On définit le style général de la page */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Lora', serif; /* Police élégante pour le corps de texte */
-    /* L'image d'arrière-plan florale */
-    background-image: url('images/background.png');
-    background-size: cover; /* L'image couvre tout l'écran */
+    font-family: 'Lora', serif;
+    /* J'ai corrigé ici : .jpg au lieu de .png */
+    background-image: url('images/background.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex; /* Pour centrer le contenu */
+    display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Prend toute la hauteur de l'écran */
+    min-height: 100vh;
 }
 
-/* La "carte" au milieu */
 .container {
-    background-color: rgba(255, 255, 255, 0.92); /* Blanc légèrement transparent */
+    background-color: rgba(255, 255, 255, 0.90); /* Blanc un peu transparent */
     padding: 50px 40px;
-    border-radius: 20px; /* Coins bien arrondis */
-    /* Ombre douce et lumineuse */
-    box-shadow: 0 15px 35px rgba(219, 39, 119, 0.2), 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(219, 39, 119, 0.2);
     text-align: center;
     max-width: 450px;
     width: 90%;
-    border: 1px solid rgba(251, 207, 232, 0.8); /* Bordure rose très fine */
-    backdrop-filter: blur(5px); /* Effet de flou derrière la carte */
+    border: 1px solid rgba(251, 207, 232, 0.8);
+    backdrop-filter: blur(3px);
 }
 
-/* Les titres */
 h1 {
-    font-family: 'Great Vibes', cursive; /* Police cursive romantique */
-    color: #be123c; /* Rouge framboise profond */
+    font-family: 'Great Vibes', cursive;
+    color: #be123c;
     margin-bottom: 15px;
-    font-size: 3em; /* Titre plus grand */
+    font-size: 3em;
     font-weight: normal;
 }
 
-/* Le texte normal */
 p {
-    color: #57534e; /* Gris chaud */
+    color: #57534e;
     line-height: 1.7;
     font-size: 1.15em;
     margin: 15px 0;
 }
 
-/* Le petit message d'indice en rose */
 .hint-message {
-    color: #db2777 !important; /* Rose vif */
+    color: #db2777 !important;
     font-style: italic;
     font-weight: 500;
+    font-size: 0.9em;
 }
 
-/* La zone pour écrire le mot de passe */
 input[type="text"] {
     padding: 15px;
-    border: 2px solid #f9a8d4; /* Bordure rose clair */
-    border-radius: 50px; /* Arrondi complet (style "pillule") */
+    border: 2px solid #f9a8d4;
+    border-radius: 50px;
     width: 60%;
     margin-top: 20px;
     outline: none;
     font-size: 1em;
     text-align: center;
-    background-color: #fffbff; /* Fond légèrement rosé */
+    background-color: #fffbff;
     transition: all 0.3s ease;
 }
 
 input[type="text"]:focus {
-    border-color: #be123c; /* Devient rose foncé au clic */
-    box-shadow: 0 0 0 4px rgba(190, 18, 60, 0.1); /* Petit halo rose */
+    border-color: #be123c;
     background-color: white;
 }
 
-/* Le bouton */
 button {
-    background: linear-gradient(45deg, #be123c, #db2777); /* Dégradé de rose */
+    background: linear-gradient(45deg, #be123c, #db2777);
     color: white;
     border: none;
     padding: 15px 30px;
-    border-radius: 50px; /* Arrondi complet */
+    border-radius: 50px;
     font-size: 1.1em;
     font-family: 'Lora', serif;
     cursor: pointer;
     margin-left: 10px;
     box-shadow: 0 5px 15px rgba(190, 18, 60, 0.3);
-    transition: all 0.3s ease;
 }
 
 button:hover {
-    transform: translateY(-3px); /* Remonte un peu */
-    box-shadow: 0 8px 20px rgba(190, 18, 60, 0.4);
+    transform: translateY(-3px);
     filter: brightness(1.1);
 }
 
-/* Message d'erreur */
 #errorMessage {
     color: #e11d48;
     background-color: #ffe4e6;
