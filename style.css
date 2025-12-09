@@ -1,96 +1,108 @@
+/* Import d'une jolie police cursive depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;1,400&display=swap');
+
 /* On définit le style général de la page */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Georgia', 'Times New Roman', serif; /* Police élégante */
-    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); /* Fond gris très doux par défaut */
-    background-color: #ffe4e6; /* Couleur de secours (rose pâle) */
+    font-family: 'Lora', serif; /* Police élégante pour le corps de texte */
+    /* L'image d'arrière-plan florale */
+    background-image: url('https://img.freepik.com/free-photo/vintage-flowers-background_23-2148906055.jpg');
+    background-size: cover; /* L'image couvre tout l'écran */
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex; /* Pour centrer le contenu */
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Prend toute la hauteur de l'écran */
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
 }
 
-/* La "carte" blanche au milieu */
+/* La "carte" au milieu */
 .container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 15px; /* Coins arrondis */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Ombre portée pour l'effet 3D */
+    background-color: rgba(255, 255, 255, 0.92); /* Blanc légèrement transparent */
+    padding: 50px 40px;
+    border-radius: 20px; /* Coins bien arrondis */
+    /* Ombre douce et lumineuse */
+    box-shadow: 0 15px 35px rgba(219, 39, 119, 0.2), 0 5px 15px rgba(0,0,0,0.05);
     text-align: center;
-    max-width: 400px;
+    max-width: 450px;
     width: 90%;
-    border: 2px solid #fda4af; /* Bordure rose */
+    border: 1px solid rgba(251, 207, 232, 0.8); /* Bordure rose très fine */
+    backdrop-filter: blur(5px); /* Effet de flou derrière la carte */
 }
 
 /* Les titres */
 h1 {
-    color: #be123c; /* Rouge romantique */
-    margin-bottom: 20px;
-    font-size: 2em;
+    font-family: 'Great Vibes', cursive; /* Police cursive romantique */
+    color: #be123c; /* Rouge framboise profond */
+    margin-bottom: 15px;
+    font-size: 3em; /* Titre plus grand */
+    font-weight: normal;
 }
 
 /* Le texte normal */
 p {
-    color: #4b5563; /* Gris foncé lisible */
-    line-height: 1.6;
-    font-size: 1.1em;
+    color: #57534e; /* Gris chaud */
+    line-height: 1.7;
+    font-size: 1.15em;
+    margin: 15px 0;
+}
+
+/* Le petit message d'indice en rose */
+.hint-message {
+    color: #db2777 !important; /* Rose vif */
+    font-style: italic;
+    font-weight: 500;
 }
 
 /* La zone pour écrire le mot de passe */
 input[type="text"] {
-    padding: 12px;
-    border: 2px solid #e5e7eb;
-    border-radius: 8px;
+    padding: 15px;
+    border: 2px solid #f9a8d4; /* Bordure rose clair */
+    border-radius: 50px; /* Arrondi complet (style "pillule") */
     width: 60%;
-    margin-top: 15px;
+    margin-top: 20px;
     outline: none;
     font-size: 1em;
-    transition: border-color 0.3s;
+    text-align: center;
+    background-color: #fffbff; /* Fond légèrement rosé */
+    transition: all 0.3s ease;
 }
 
 input[type="text"]:focus {
-    border-color: #be123c; /* Devient rose quand on clique dedans */
+    border-color: #be123c; /* Devient rose foncé au clic */
+    box-shadow: 0 0 0 4px rgba(190, 18, 60, 0.1); /* Petit halo rose */
+    background-color: white;
 }
 
 /* Le bouton */
 button {
-    background-color: #be123c;
+    background: linear-gradient(45deg, #be123c, #db2777); /* Dégradé de rose */
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 1em;
+    padding: 15px 30px;
+    border-radius: 50px; /* Arrondi complet */
+    font-size: 1.1em;
+    font-family: 'Lora', serif;
     cursor: pointer;
-    margin-left: 5px;
-    transition: background-color 0.3s;
+    margin-left: 10px;
+    box-shadow: 0 5px 15px rgba(190, 18, 60, 0.3);
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #9f1239; /* Change un peu de couleur au survol */
+    transform: translateY(-3px); /* Remonte un peu */
+    box-shadow: 0 8px 20px rgba(190, 18, 60, 0.4);
+    filter: brightness(1.1);
 }
 
-/* Style spécifique pour les boutons du menu (Page 2) */
-.letter-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.letter-btn {
-    text-decoration: none;
-    background-color: #fff1f2;
-    color: #881337;
-    padding: 15px;
+/* Message d'erreur */
+#errorMessage {
+    color: #e11d48;
+    background-color: #ffe4e6;
+    padding: 10px;
     border-radius: 10px;
-    border: 1px solid #fecdd3;
-    transition: all 0.3s;
-    font-weight: bold;
-}
-
-.letter-btn:hover {
-    transform: translateY(-3px); /* Le bouton remonte un peu */
-    box-shadow: 0 5px 15px rgba(190, 18, 60, 0.2);
-    background-color: #fce7f3;
+    font-size: 0.95em;
+    margin-top: 20px;
+    border: 1px solid #fca5a5;
 }
