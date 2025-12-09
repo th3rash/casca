@@ -7,7 +7,7 @@ body {
     padding: 0;
     font-family: 'Lora', serif; /* Police élégante pour le corps de texte */
     /* L'image d'arrière-plan florale */
-    background-image: url('https://img.freepik.com/free-photo/vintage-flowers-background_23-2148906055.jpg');
+    background-image: url('images/background.png');
     background-size: cover; /* L'image couvre tout l'écran */
     background-position: center;
     background-repeat: no-repeat;
