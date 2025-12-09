@@ -1,12 +1,15 @@
-/* Import d'une jolie police cursive */
+/* Import des polices romantiques */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;1,400&display=swap');
 
+/* --- LE FOND DE LA PAGE --- */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Lora', serif;
-    /* J'ai corrigé ici : .jpg au lieu de .png */
+    
+    /* IMPORTANT : J'ai mis .jpg ici car tu as renommé ton image en jpg */
     background-image: url('images/background.png');
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,93 +19,130 @@ body {
     min-height: 100vh;
 }
 
-/* La "carte" au milieu - Version améliorée pour mieux se fondre */
+/* --- LA CARTE AU MILIEU (NOUVEAU DESIGN) --- */
 .container {
-    /* Fond blanc beaucoup plus transparent pour laisser voir les fleurs */
-    background-color: rgba(255, 255, 255, 0.75);
+    /* Fond légèrement rosé et transparent (Effet verre) */
+    background-color: rgba(255, 245, 247, 0.85);
     
     padding: 50px 40px;
-    border-radius: 30px; /* Coins encore plus arrondis pour la douceur */
+    border-radius: 30px; /* Coins bien arrondis */
     
-    /* Ombre beaucoup plus douce et diffuse, moins "rose" pour être plus naturel */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    /* Ombre douce rosée */
+    box-shadow: 0 15px 40px rgba(190, 18, 60, 0.15);
     
     text-align: center;
     max-width: 450px;
     width: 90%;
     
-    /* Bordure blanche très subtile pour un effet "verre poli" */
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Bordure blanche solide pour faire propre */
+    border: 3px solid #ffffff;
     
-    /* Effet de flou important derrière la carte (effet verre dépoli) */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px); /* Important pour les iPhone */
+    /* Le flou derrière la carte (Glassmorphism) */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
+/* --- LES TITRES --- */
 h1 {
     font-family: 'Great Vibes', cursive;
-    color: #be123c;
-    margin-bottom: 15px;
-    font-size: 3em;
+    color: #be123c; /* Rouge framboise */
+    margin-bottom: 10px;
+    font-size: 3.2em;
     font-weight: normal;
+    text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
 }
 
+/* --- LE TEXTE --- */
 p {
-    color: #57534e;
-    line-height: 1.7;
-    font-size: 1.15em;
+    color: #57534e; /* Gris chaud lisible */
+    line-height: 1.6;
+    font-size: 1.1em;
     margin: 15px 0;
 }
 
+/* Le petit indice */
 .hint-message {
     color: #db2777 !important;
     font-style: italic;
-    font-weight: 500;
     font-size: 0.9em;
+    margin-top: -5px;
 }
 
+/* --- LA ZONE DE TEXTE (INPUT) --- */
 input[type="text"] {
-    padding: 15px;
-    border: 2px solid #f9a8d4;
+    padding: 12px 20px;
+    border: 2px solid #fbcfe8; /* Bordure rose pâle */
     border-radius: 50px;
     width: 60%;
     margin-top: 20px;
     outline: none;
     font-size: 1em;
     text-align: center;
-    background-color: #fffbff;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #831843;
+    font-family: 'Lora', serif;
     transition: all 0.3s ease;
 }
 
 input[type="text"]:focus {
     border-color: #be123c;
     background-color: white;
+    box-shadow: 0 0 0 4px rgba(190, 18, 60, 0.1);
 }
 
+/* --- LE BOUTON ENTRER --- */
 button {
-    background: linear-gradient(45deg, #be123c, #db2777);
+    background: linear-gradient(135deg, #be123c 0%, #db2777 100%);
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 12px 30px;
     border-radius: 50px;
     font-size: 1.1em;
     font-family: 'Lora', serif;
     cursor: pointer;
     margin-left: 10px;
-    box-shadow: 0 5px 15px rgba(190, 18, 60, 0.3);
+    box-shadow: 0 4px 15px rgba(190, 18, 60, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-    transform: translateY(-3px);
-    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(190, 18, 60, 0.4);
 }
 
+/* --- LE MENU (PAGE 2) --- */
+.letter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.letter-btn {
+    text-decoration: none;
+    background-color: white;
+    color: #9d174d;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #fbcfe8;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: block;
+}
+
+.letter-btn:hover {
+    background-color: #fce7f3;
+    transform: scale(1.02);
+    border-color: #be123c;
+}
+
+/* --- MESSAGE D'ERREUR --- */
 #errorMessage {
     color: #e11d48;
-    background-color: #ffe4e6;
+    background-color: rgba(255, 228, 230, 0.8);
     padding: 10px;
     border-radius: 10px;
-    font-size: 0.95em;
-    margin-top: 20px;
-    border: 1px solid #fca5a5;
+    font-size: 0.9em;
+    margin-top: 15px;
+    display: inline-block;
 }
