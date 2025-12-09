@@ -18,7 +18,7 @@ body {
 
 .container {
     background-color: rgba(255, 245, 247, 0.85);
-    padding: 40px; /* Un peu moins de padding en haut pour l'avatar */
+    padding: 40px;
     border-radius: 30px;
     box-shadow: 0 15px 40px rgba(190, 18, 60, 0.15);
     text-align: center;
@@ -27,20 +27,20 @@ body {
     border: 3px solid #ffffff;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    margin-top: 20px; /* Petite marge pour les petits écrans */
+    margin-top: 20px;
 }
 
-/* --- NOUVEAU : STYLE DE L'AVATAR --- */
+/* --- STYLE DE L'AVATAR --- */
 .avatar-img {
-    width: 150px; /* Taille de l'image */
-    height: 150px; /* Doit être égale à la largeur pour être un cercle parfait */
-    border-radius: 50%; /* C'est ça qui rend l'image ronde */
-    border: 5px solid white; /* Grosse bordure blanche comme sur ton exemple */
-    box-shadow: 0 5px 15px rgba(190, 18, 60, 0.2); /* Petite ombre pour le relief */
-    object-fit: cover; /* L'image remplit bien le cercle sans être déformée */
-    margin-bottom: 10px; /* Espace entre l'image et le titre */
-    margin-top: -75px; /* L'image "sort" à moitié du cadre vers le haut */
-    background-color: white; /* Fond blanc au cas où l'image est transparente */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(190, 18, 60, 0.2);
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-top: -75px;
+    background-color: white;
 }
 
 h1 {
@@ -106,12 +106,36 @@ button:hover {
     box-shadow: 0 6px 20px rgba(190, 18, 60, 0.4);
 }
 
-/* --- LE MENU (PAGE 2) --- */
+/* --- LE MENU DÉFILANT (SCROLL) --- */
+/* C'est ici que j'ai fait la modification pour toi */
 .letter-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 25px;
+    margin-top: 15px;
+    
+    /* Hauteur maximum avant que ça scrolle (environ 3 boutons) */
+    max-height: 260px; 
+    overflow-y: auto; /* Active le scroll */
+    
+    /* Espacement pour ne pas que le texte touche la barre */
+    padding: 5px 10px 5px 5px; 
+}
+
+/* Design de la barre de défilement (Scrollbar) Rose */
+.letter-list::-webkit-scrollbar {
+    width: 6px; /* Barre fine */
+}
+.letter-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.4); 
+    border-radius: 10px;
+}
+.letter-list::-webkit-scrollbar-thumb {
+    background-color: #fbcfe8; /* Rose pâle */
+    border-radius: 10px;
+}
+.letter-list::-webkit-scrollbar-thumb:hover {
+    background-color: #db2777; /* Rose foncé au survol */
 }
 
 .letter-btn {
@@ -124,6 +148,8 @@ button:hover {
     font-weight: bold;
     transition: all 0.3s;
     display: block;
+    /* Empêche le bouton de se déformer */
+    flex-shrink: 0; 
 }
 
 .letter-btn:hover {
