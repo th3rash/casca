@@ -139,20 +139,28 @@ button:hover {
     padding: 5px 15px 5px 5px; 
 }
 
-/* Scrollbar */
+/* --- Scrollbar (BARRE DE DÉFILEMENT EN GRIS) --- */
 .letter-list::-webkit-scrollbar {
-    width: 6px;
+    width: 8px; /* Un peu plus large pour mieux la voir */
 }
+
+/* Le fond du rail (gris très pâle) */
 .letter-list::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.4); 
+    background: rgba(0, 0, 0, 0.05); 
     border-radius: 10px;
 }
+
+/* La barre elle-même (GRIS VISIBLE) */
 .letter-list::-webkit-scrollbar-thumb {
-    background-color: #fbcfe8;
+    background-color: #bdc3c7; /* Gris */
     border-radius: 10px;
+    border: 2px solid transparent; 
+    background-clip: content-box;
 }
+
+/* Quand on passe la souris dessus (Gris plus foncé) */
 .letter-list::-webkit-scrollbar-thumb:hover {
-    background-color: #db2777;
+    background-color: #95a5a6; 
 }
 
 /* --- BOUTONS --- */
