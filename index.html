@@ -1,167 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page de Connexion</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: url('./images/background.jpg') no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-            backdrop-filter: blur(1px);
-        }
-
-        .container {
-            display: flex;
-            width: 800px;
-            height: 400px;
-            background-color: rgba(255, 255, 255, 0.80);
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            backdrop-filter: blur(0px);
-        }
-
-        .container.fade-out {
-            opacity: 0;
-            transform: translateY(-50px);
-        }
-
-        .left-side {
-            background-color: rgba(255, 255, 255, 0.3);
-            color: #000;
-            padding: 40px;
-            width: 40%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
-        }
-
-        .left-side h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .left-side p {
-            font-size: 18px;
-            opacity: 0.8;
-        }
-
-        .right-side {
-            padding: 40px;
-            width: 60%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        h2 {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .input-box {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        input[type="password"] {
-            width: calc(100% - 20px);
-            padding: 14px;
-            padding-left: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 8px;
-            outline: none;
-            font-size: 16px;
-            background-color: rgba(255, 255, 255, 0.3);
-            transition: border 0.3s ease;
-            color: #000;
-        }
-
-        input[type="password"]::placeholder {
-            color: rgba(0, 0, 0, 0.5);
-        }
-
-        input[type="password"]:focus {
-            border-color: #5c8df6;
-        }
-
-        .icon {
-            position: absolute;
-            left: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 18px;
-            color: #000;
-        }
-
-        .btn {
-            background-color: #5c8df6;
-            color: #fff;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .btn:hover {
-            background-color: #4a76d4;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour toi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="container" id="container">
-    <!-- Partie gauche -->
-    <div class="left-side">
-        <h1>Bienvenue !</h1>
-        <p>Le mot de passe, c'est ton prénom avec la première lettre en majuscule. Si tu entres ton nom et que ça ne marche pas, c'est que le message qui se trouve derrière ce site ne t'est pas destiné.</p>
+    <div class="container">
+        <h1>❤️ Bienvenue ❤️</h1>
+        <p>J'ai écrit quelque chose pour toi...</p>
+        <p>Mais d'abord, quel est ton prénom ?</p>
+        
+        <input type="text" id="passwordInput" placeholder="Ton prénom...">
+        <button onclick="checkPassword()">Entrer</button>
+        <p id="errorMessage" style="color: red; display: none;">Ce n'est pas le bon prénom !</p>
     </div>
 
-    <!-- Partie droite -->
-    <div class="right-side">
-        <h2>Connexion</h2>
-        <div class="input-box">
-            <span class="icon">🔒</span>
-            <input type="password" id="password" placeholder="Entrez le mot de passe" />
-        </div>
-        <button class="btn" onclick="checkPassword()">Se connecter</button>
-    </div>
-</div>
-
-<script>
-    function checkPassword() {
-        const password = document.getElementById("password").value;
-        if (password === "Ambre") {
-            const container = document.getElementById("container");
-            container.classList.add("fade-out"); // Lance l'animation
-            setTimeout(() => {
-                window.location.href = "./Text.html"; // Redirige après l'animation
-            }, 500);
-        } else {
-            alert("Mot de passe incorrect !");
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("passwordInput").value;
+            // CHANGE "sophie" PAR SON VRAI PRÉNOM (gardes les guillemets "")
+            if (password.toLowerCase() === "sophie") {
+                window.location.href = "menu.html";
+            } else {
+                document.getElementById("errorMessage").style.display = "block";
+            }
         }
-    }
-</script>
-
+    </script>
 </body>
 </html>
