@@ -5,8 +5,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Lora', serif;
-    /* Assure-toi que le nom est bon : .jpg ou .png selon ton fichier */
-    background-image: url('images/background.png');
+    background-image: url('images/background.png'); /* Vérifie toujours si c'est .png ou .jpg */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,47 +15,49 @@ body {
     min-height: 100vh;
 }
 
+/* --- LA CARTE (CONTAINER) --- */
 .container {
     background-color: rgba(255, 245, 247, 0.85);
-    padding: 40px;
+    /* J'ai réduit le padding ici pour que la boîte soit moins haute */
+    padding: 25px; 
     border-radius: 30px;
     box-shadow: 0 15px 40px rgba(190, 18, 60, 0.15);
     text-align: center;
-    max-width: 450px;
-    width: 90%;
+    max-width: 400px; /* Un peu moins large aussi */
+    width: 85%;
     border: 3px solid #ffffff;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
-/* --- STYLE DE L'AVATAR --- */
+/* --- L'AVATAR --- */
 .avatar-img {
-    width: 150px;
-    height: 150px;
+    width: 130px; /* Un tout petit peu plus petit pour l'équilibre */
+    height: 130px;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 4px solid white;
     box-shadow: 0 5px 15px rgba(190, 18, 60, 0.2);
     object-fit: cover;
-    margin-bottom: 10px;
-    margin-top: -75px;
+    margin-bottom: 5px;
+    margin-top: -70px; /* Remonte bien pour sortir du cadre */
     background-color: white;
 }
 
 h1 {
     font-family: 'Great Vibes', cursive;
     color: #be123c;
-    margin-bottom: 10px;
-    font-size: 3em;
+    margin-bottom: 5px;
+    font-size: 2.8em; /* Titre légèrement réduit */
     font-weight: normal;
     text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
 }
 
 p {
     color: #57534e;
-    line-height: 1.6;
+    line-height: 1.5;
     font-size: 1.1em;
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 .hint-message {
@@ -66,12 +67,13 @@ p {
     margin-top: -5px;
 }
 
+/* --- ZONE DE SAISIE (PAGE 1) --- */
 input[type="text"] {
-    padding: 12px 20px;
+    padding: 10px 20px;
     border: 2px solid #fbcfe8;
     border-radius: 50px;
     width: 60%;
-    margin-top: 20px;
+    margin-top: 15px;
     outline: none;
     font-size: 1em;
     text-align: center;
@@ -91,12 +93,12 @@ button {
     background: linear-gradient(135deg, #be123c 0%, #db2777 100%);
     color: white;
     border: none;
-    padding: 12px 30px;
+    padding: 10px 25px;
     border-radius: 50px;
     font-size: 1.1em;
     font-family: 'Lora', serif;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 5px;
     box-shadow: 0 4px 15px rgba(190, 18, 60, 0.3);
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -107,49 +109,47 @@ button:hover {
 }
 
 /* --- LE MENU DÉFILANT (SCROLL) --- */
-/* C'est ici que j'ai fait la modification pour toi */
 .letter-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px; /* Moins d'espace entre les boutons */
     margin-top: 15px;
     
-    /* Hauteur maximum avant que ça scrolle (environ 3 boutons) */
-    max-height: 260px; 
-    overflow-y: auto; /* Active le scroll */
+    /* C'EST ICI QUE ÇA CHANGE LA TAILLE : */
+    /* 160px = environ 2 boutons et demi visibles */
+    max-height: 160px; 
     
-    /* Espacement pour ne pas que le texte touche la barre */
-    padding: 5px 10px 5px 5px; 
+    overflow-y: auto; /* Scroll activé */
+    padding: 5px 10px 5px 5px;
 }
 
-/* Design de la barre de défilement (Scrollbar) Rose */
+/* Style de la barre de défilement (Scrollbar) */
 .letter-list::-webkit-scrollbar {
-    width: 6px; /* Barre fine */
+    width: 6px;
 }
 .letter-list::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.4); 
     border-radius: 10px;
 }
 .letter-list::-webkit-scrollbar-thumb {
-    background-color: #fbcfe8; /* Rose pâle */
+    background-color: #fbcfe8;
     border-radius: 10px;
 }
 .letter-list::-webkit-scrollbar-thumb:hover {
-    background-color: #db2777; /* Rose foncé au survol */
+    background-color: #db2777;
 }
 
 .letter-btn {
     text-decoration: none;
     background-color: white;
     color: #9d174d;
-    padding: 15px;
+    padding: 12px; /* Boutons un peu moins épais */
     border-radius: 15px;
     border: 1px solid #fbcfe8;
     font-weight: bold;
     transition: all 0.3s;
     display: block;
-    /* Empêche le bouton de se déformer */
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 .letter-btn:hover {
