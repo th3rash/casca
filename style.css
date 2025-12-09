@@ -15,7 +15,7 @@ body {
     min-height: 100vh;
 }
 
-/* --- LA CARTE (CONTAINER FORMAT CINÉMA) --- */
+/* --- BOÎTE LARGE (Pour le Menu - Format Cinéma) --- */
 .container {
     background-color: rgba(255, 245, 247, 0.85);
     padding: 30px 50px; 
@@ -31,6 +31,23 @@ body {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     margin-top: 30px;
+}
+
+/* --- BOÎTE COMPACTE (SPÉCIALE POUR L'ACCUEIL) --- */
+.login-container {
+    background-color: rgba(255, 245, 247, 0.85);
+    /* Padding différent pour être plus compact */
+    padding: 40px 30px; 
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(190, 18, 60, 0.15);
+    text-align: center;
+    border: 3px solid #ffffff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    /* C'est ici la différence : on force une petite taille */
+    max-width: 400px; 
+    width: 90%;
 }
 
 /* --- L'AVATAR --- */
@@ -69,13 +86,12 @@ p {
     margin-top: -5px;
 }
 
-/* --- ZONE DE SAISIE (PAGE 1) --- */
+/* --- ZONE DE SAISIE --- */
 input[type="text"] {
     padding: 10px 20px;
     border: 2px solid #fbcfe8;
     border-radius: 50px;
     width: 60%;
-    /* On limite aussi la largeur de la zone de saisie pour qu'elle soit jolie */
     max-width: 350px; 
     margin-top: 15px;
     outline: none;
@@ -112,7 +128,7 @@ button:hover {
     box-shadow: 0 6px 20px rgba(190, 18, 60, 0.4);
 }
 
-/* --- LE MENU DÉFILANT (SCROLL) --- */
+/* --- LE MENU DÉFILANT --- */
 .letter-list {
     display: flex;
     flex-direction: column;
@@ -139,7 +155,7 @@ button:hover {
     background-color: #db2777;
 }
 
-/* --- LE CHANGEMENT EST ICI --- */
+/* --- BOUTONS --- */
 .letter-btn {
     text-decoration: none;
     background-color: white;
@@ -149,14 +165,10 @@ button:hover {
     border: 1px solid #fbcfe8;
     font-weight: bold;
     transition: all 0.3s;
-    
     display: block;
-    width: 100%; /* S'adapte sur mobile */
-    
-    /* C'est ça qui empêche les boutons d'être trop larges */
+    width: 100%;
     max-width: 350px; 
-    margin: 0 auto; /* Ça centre le bouton au milieu du grand cadre */
-    
+    margin: 0 auto; 
     flex-shrink: 0;
 }
 
