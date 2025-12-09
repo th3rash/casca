@@ -1,15 +1,12 @@
-/* Import des polices romantiques */
+/* Import des polices */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;1,400&display=swap');
 
-/* --- LE FOND DE LA PAGE --- */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Lora', serif;
-    
-    /* IMPORTANT : J'ai mis .jpg ici car tu as renommé ton image en jpg */
+    /* Assure-toi que le nom est bon : .jpg ou .png selon ton fichier */
     background-image: url('images/background.png');
-    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,48 +16,49 @@ body {
     min-height: 100vh;
 }
 
-/* --- LA CARTE AU MILIEU (NOUVEAU DESIGN) --- */
 .container {
-    /* Fond légèrement rosé et transparent (Effet verre) */
     background-color: rgba(255, 245, 247, 0.85);
-    
-    padding: 50px 40px;
-    border-radius: 30px; /* Coins bien arrondis */
-    
-    /* Ombre douce rosée */
+    padding: 40px; /* Un peu moins de padding en haut pour l'avatar */
+    border-radius: 30px;
     box-shadow: 0 15px 40px rgba(190, 18, 60, 0.15);
-    
     text-align: center;
     max-width: 450px;
     width: 90%;
-    
-    /* Bordure blanche solide pour faire propre */
     border: 3px solid #ffffff;
-    
-    /* Le flou derrière la carte (Glassmorphism) */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    margin-top: 20px; /* Petite marge pour les petits écrans */
 }
 
-/* --- LES TITRES --- */
+/* --- NOUVEAU : STYLE DE L'AVATAR --- */
+.avatar-img {
+    width: 150px; /* Taille de l'image */
+    height: 150px; /* Doit être égale à la largeur pour être un cercle parfait */
+    border-radius: 50%; /* C'est ça qui rend l'image ronde */
+    border: 5px solid white; /* Grosse bordure blanche comme sur ton exemple */
+    box-shadow: 0 5px 15px rgba(190, 18, 60, 0.2); /* Petite ombre pour le relief */
+    object-fit: cover; /* L'image remplit bien le cercle sans être déformée */
+    margin-bottom: 10px; /* Espace entre l'image et le titre */
+    margin-top: -75px; /* L'image "sort" à moitié du cadre vers le haut */
+    background-color: white; /* Fond blanc au cas où l'image est transparente */
+}
+
 h1 {
     font-family: 'Great Vibes', cursive;
-    color: #be123c; /* Rouge framboise */
+    color: #be123c;
     margin-bottom: 10px;
-    font-size: 3.2em;
+    font-size: 3em;
     font-weight: normal;
     text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
 }
 
-/* --- LE TEXTE --- */
 p {
-    color: #57534e; /* Gris chaud lisible */
+    color: #57534e;
     line-height: 1.6;
     font-size: 1.1em;
     margin: 15px 0;
 }
 
-/* Le petit indice */
 .hint-message {
     color: #db2777 !important;
     font-style: italic;
@@ -68,10 +66,9 @@ p {
     margin-top: -5px;
 }
 
-/* --- LA ZONE DE TEXTE (INPUT) --- */
 input[type="text"] {
     padding: 12px 20px;
-    border: 2px solid #fbcfe8; /* Bordure rose pâle */
+    border: 2px solid #fbcfe8;
     border-radius: 50px;
     width: 60%;
     margin-top: 20px;
@@ -90,7 +87,6 @@ input[type="text"]:focus {
     box-shadow: 0 0 0 4px rgba(190, 18, 60, 0.1);
 }
 
-/* --- LE BOUTON ENTRER --- */
 button {
     background: linear-gradient(135deg, #be123c 0%, #db2777 100%);
     color: white;
@@ -136,7 +132,6 @@ button:hover {
     border-color: #be123c;
 }
 
-/* --- MESSAGE D'ERREUR --- */
 #errorMessage {
     color: #e11d48;
     background-color: rgba(255, 228, 230, 0.8);
