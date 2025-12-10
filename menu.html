@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Lettres</title>
     <link rel="stylesheet" href="style.css">
-    
+
     <script>
         // Si le ticket n'existe pas...
         if (!sessionStorage.getItem("access_granted")) {
@@ -16,14 +16,15 @@
 </head>
 <body>
     <div class="container">
-        <img src="images/avatar.png" alt="Nous" class="avatar-img">
-        
-        <h1>💌 Mes lettres pour toi</h1>
-        <p>Choisis une lettre...</p>
-        
+        <div class="header-container">
+            <img src="images/avatar.png" alt="Nous" class="avatar-img">
+            <h1>💌 Mes lettres pour toi</h1>
+            <p>Choisis une lettre...</p>
+        </div>
+
         <div class="letter-list">
             <a href="lettres/lettre1.html" class="letter-btn">Lettre N°1 : Un Rêve Silencieux 🌙</a>
-            
+
             <a href="#" class="letter-btn">SOON...</a>
             <a href="#" class="letter-btn">SOON...</a>
             <a href="#" class="letter-btn">SOON...</a>
