@@ -15,31 +15,44 @@ body {
     min-height: 100vh;
 }
 
-/* --- BOÎTE LARGE (Pour le Menu - Avec le fond papier) --- */
+/* --- BOÎTE LARGE (Pour le Menu) --- */
 .container {
-    background: url('images/papier.png');
+    /* C'EST ICI LE CHANGEMENT : On rend le voile blanc PLUS OPAQUE (0.9 au lieu de 0.7) */
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/papier.png');
     background-size: cover;
     background-position: center;
-    
+
+    /* On enlève le flou */
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    
+
     padding: 30px 50px;
     border-radius: 30px;
     box-shadow: 0 15px 40px rgba(190, 18, 60, 0.15);
     text-align: center;
-    
+
     /* Format Large */
     max-width: 650px;
     width: 90%;
-    
+
     border: 3px solid #ffffff;
     margin-top: 30px;
+}
+
+/* --- NOUVEAU : Le style pour l'en-tête (titre et avatar) --- */
+.header-container {
+    background-color: #ffffff; /* Fond blanc pur */
+    padding: 30px;
+    border-radius: 25px; /* Coins arrondis */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Jolie ombre pour le faire ressortir */
+    margin-bottom: 25px; /* Espace avec la liste des lettres */
+    position: relative; /* Nécessaire pour que l'avatar se positionne bien */
 }
 
 /* --- BOÎTE COMPACTE (SPÉCIALE POUR L'ACCUEIL) --- */
 .login-container {
     background-color: rgba(255, 245, 247, 0.85);
+    /* Padding différent pour être plus compact */
     padding: 40px 30px;
     border-radius: 30px;
     box-shadow: 0 15px 40px rgba(190, 18, 60, 0.15);
@@ -48,6 +61,7 @@ body {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 
+    /* C'est ici la différence : on force une petite taille */
     max-width: 400px;
     width: 90%;
 }
@@ -60,9 +74,12 @@ body {
     border: 4px solid white;
     box-shadow: 0 5px 15px rgba(190, 18, 60, 0.2);
     object-fit: cover;
-    margin-bottom: 5px;
-    margin-top: -70px;
+    /* On change la position pour qu'il soit "à cheval" sur le nouveau bloc */
+    margin-top: -80px; /* On le remonte un peu plus */
+    margin-bottom: 10px;
     background-color: white;
+    position: relative; /* Pour qu'il reste au-dessus */
+    z-index: 1;
 }
 
 h1 {
@@ -131,7 +148,6 @@ button:hover {
 }
 
 /* --- STYLE DU TEXTE DE LA LETTRE (EFFET CARTE) --- */
-/* C'est ce bloc qui a été ajouté pour embellir ta lettre */
 .text-content {
     text-align: justify;
     margin-top: 25px;
@@ -139,12 +155,12 @@ button:hover {
     line-height: 1.8;
     color: #2c2c2c;
     font-family: 'Lora', serif;
-    
+
     /* Le fond blanc transparent et les bords ronds */
-    background-color: rgba(255, 255, 255, 0.7); 
-    padding: 30px; 
-    border-radius: 20px; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* --- LE MENU DÉFILANT --- */
