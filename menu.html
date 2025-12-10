@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Lettres</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script>
+        // Si le ticket n'existe pas...
+        if (!sessionStorage.getItem("access_granted")) {
+            // ... on renvoie la personne à l'accueil direct !
+            window.location.href = "index.html";
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -14,11 +22,11 @@
         <p>Choisis une lettre...</p>
         
         <div class="letter-list">
-            <a href="lettres/lettre1.html" class="letter-btn">Lettre N°1 : L'écho de mon cœur 💓</a>
-            <a href="lettre2.html" class="letter-btn">SOON...</a>
-            <a href="lettre3.html" class="letter-btn">SOON...</a>
-            <a href="lettre4.html" class="letter-btn">SOON...</a>
-            <a href="lettre5.html" class="letter-btn">SOON...</a>
+            <a href="lettres/lettre1.html" class="letter-btn">Lettre N°1 : Un Rêve Silencieux 🌙</a>
+            
+            <a href="#" class="letter-btn">SOON...</a>
+            <a href="#" class="letter-btn">SOON...</a>
+            <a href="#" class="letter-btn">SOON...</a>
         </div>
     </div>
 </body>
