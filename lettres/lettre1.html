@@ -7,47 +7,26 @@
     <link rel="stylesheet" href="../style.css">
     
     <script>
+        // On vérifie si le ticket est là
         if (!sessionStorage.getItem("access_granted")) {
+            // S'il n'est pas là, on renvoie à l'accueil (on remonte d'un dossier avec ../)
             window.location.href = "../index.html";
         }
     </script>
-
     <style>
-        /* --- C'EST ICI QUE ÇA CHANGE --- */
-        /* On modifie la boîte .container JUSTE pour cette page */
-        .container {
-            /* On remplace la couleur par ton image */
-            background-image: url('../images/papier.png');
-            background-size: cover; /* L'image couvre toute la boîte */
-            background-position: center;
-            
-            /* On enlève le flou pour bien voir les détails du papier */
-            backdrop-filter: none;
-            -webkit-backdrop-filter: none;
-            
-            /* Couleur du texte : on garde gris foncé ou noir pour que ce soit lisible sur le papier */
-            color: #2c2c2c; 
-        }
-
         .text-content {
             text-align: justify;
             margin-top: 25px;
             font-size: 1.15em;
-            line-height: 1.9; /* Un peu plus d'espace pour faire "écriture" */
+            line-height: 1.8;
+            color: #4a4a4a;
             font-family: 'Lora', serif;
-            
-            /* Petite astuce : si le papier est sombre, on peut ajouter un fond blanc transparent sous le texte */
-            /* background-color: rgba(255,255,255,0.4); */
-            /* padding: 15px; */
-            /* border-radius: 10px; */
         }
-        
         .text-content p { margin-bottom: 20px; }
-        
         .back-link {
             display: block;
             text-align: left;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #be123c;
             text-decoration: none;
             font-weight: bold;
@@ -55,12 +34,11 @@
             transition: color 0.3s;
         }
         .back-link:hover { color: #881337; text-decoration: underline; }
-        
         .signature {
             text-align: right;
             margin-top: 40px;
             font-family: 'Great Vibes', cursive;
-            font-size: 2em;
+            font-size: 1.8em;
             color: #be123c;
         }
     </style>
