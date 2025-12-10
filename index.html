@@ -22,11 +22,17 @@
     </div>
 
     <script>
+        // Si elle revient sur l'accueil, on lui enlève son ticket par sécurité
+        sessionStorage.removeItem("access_granted");
+
         function checkPassword() {
-            var password = document.getElementById("passwordInput").value.trim(); // .trim() enlève les espaces accidentels
+            var password = document.getElementById("passwordInput").value.trim();
             
-            // On vérifie que c'est exactement "Ambre" avec la majuscule
             if (password === "Ambre") {
+                // C'EST ICI LA SÉCURITÉ : On lui donne le ticket "access_granted"
+                sessionStorage.setItem("access_granted", "true");
+                
+                // On l'envoie vers le menu
                 window.location.href = "menu.html";
             } else {
                 document.getElementById("errorMessage").style.display = "block";
