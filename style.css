@@ -1,12 +1,12 @@
 /* Import des polices */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;1,400&display=swap');
 
-/* --- STYLE DE BASE (Accueil) --- */
+/* --- CONFIGURATION DE BASE (Pour l'accueil) --- */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Lora', serif;
-    background-image: url('images/background.png'); /* Fond par défaut pour l'accueil */
+    background-image: url('images/background.png'); /* Fond par défaut (rose/flou) */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,29 +16,32 @@ body {
     min-height: 100vh;
 }
 
-/* --- NOUVEAU : LE FOND AVEC PHOTOS (Pour le menu et les lettres) --- */
-/* On appliquera cette classe sur le <body> du menu et des lettres */
+/* --- NOUVEAU : LE MUR DE PHOTOS (Pour le menu et les lettres) --- */
+/* C'est ici que s'affiche ton montage "background2.jpg" sur les côtés */
 .fond-photos {
-    background-image: url('images/background2.jpg') !important; /* Tes photos punaisées */
-}
-
-/* --- 1. LA BOÎTE CENTRALE (Avec le couple) --- */
-.container {
-    /* On garde ton couple ici ! */
-    background-image: url('images/papier.png'); 
-    
+    background-image: url('images/background2.jpg') !important; /* Vérifie bien le nom (.jpg ou .png) */
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* L'image reste fixe quand on scrolle */
+}
+
+/* --- 1. LE GRAND FOND CENTRAL (Papier/Couple) --- */
+.container {
+    /* On garde le papier ici pour qu'il soit au milieu, par-dessus le mur de photos */
+    background-image: url('images/papier.png');
+    background-size: cover;
+    background-position: center;
+    
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     
     padding: 20px; 
     border-radius: 30px;
-    box-shadow: 0 15px 40px rgba(190, 18, 60, 0.3); /* Ombre un peu plus forte pour détacher du fond */
+    box-shadow: 0 15px 40px rgba(190, 18, 60, 0.3); /* Ombre plus marquée pour détacher du fond */
     text-align: center;
     
     max-width: 650px;
-    width: 90%; /* Laisse de la place sur les côtés pour voir les photos */
+    width: 90%;
     
     border: 3px solid #ffffff;
     margin-top: 30px;
@@ -46,12 +49,30 @@ body {
 
 /* --- 2. LA CARTE BLANCHE --- */
 .white-card {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.85); /* Fond blanc unique */
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
+}
+
+/* --- 3. LE DESSIN DU COUPLE (À l'intérieur de la carte) --- */
+.couple-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-top: -40px;
+    margin-bottom: 10px;
+}
+
+.couple-drawing {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: 0.9;
 }
 
 /* --- L'AVATAR --- */
@@ -66,26 +87,33 @@ body {
     margin-bottom: 10px;
     background-color: white;
     align-self: center;
+    z-index: 10;
 }
 
-/* --- RESTE DU CODE (Texte, Boutons...) --- */
+/* --- RESTE DU CODE (Scroll, Boutons...) --- */
 .scroll-area {
     margin-top: 15px; display: flex; flex-direction: column; gap: 12px; max-height: 200px; overflow-y: auto; padding: 5px;
 }
+
+/* Titres et Textes */
 h1 {
     font-family: 'Great Vibes', cursive; color: #be123c; margin-bottom: 5px; font-size: 2.8em; font-weight: normal; text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
 }
 p { color: #57534e; line-height: 1.5; font-size: 1.1em; margin: 5px 0; }
+
+/* Boutons */
 .letter-btn {
     text-decoration: none; background-color: white; color: #9d174d; padding: 12px; border-radius: 15px; border: 1px solid #fbcfe8; font-weight: bold; transition: all 0.3s; display: block; width: 100%; max-width: 350px; margin: 0 auto; flex-shrink: 0;
 }
 .letter-btn:hover { background-color: #fce7f3; transform: scale(1.02); border-color: #be123c; }
+
+/* Scrollbar */
 .scroll-area::-webkit-scrollbar { width: 8px; }
 .scroll-area::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.05); border-radius: 10px; }
 .scroll-area::-webkit-scrollbar-thumb { background-color: #bdc3c7; border-radius: 10px; border: 2px solid transparent; background-clip: content-box; }
 .scroll-area::-webkit-scrollbar-thumb:hover { background-color: #95a5a6; }
 
-/* Styles Login et Lettre */
+/* Styles Login et Lettres */
 .login-container { background-color: rgba(255, 245, 247, 0.85); padding: 40px 30px; border-radius: 30px; box-shadow: 0 15px 40px rgba(190, 18, 60, 0.15); text-align: center; border: 3px solid #ffffff; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); max-width: 400px; width: 90%; }
 .hint-message { color: #db2777 !important; font-style: italic; font-size: 0.9em; margin-top: -5px; }
 input[type="text"] { padding: 10px 20px; border: 2px solid #fbcfe8; border-radius: 50px; width: 60%; max-width: 350px; margin-top: 15px; outline: none; font-size: 1em; text-align: center; background-color: rgba(255, 255, 255, 0.9); color: #831843; font-family: 'Lora', serif; transition: all 0.3s ease; }
