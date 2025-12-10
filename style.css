@@ -19,7 +19,7 @@ body {
 /* --- NOUVEAU : LE MUR DE PHOTOS (Pour le menu et les lettres) --- */
 /* C'est ici que s'affiche ton montage "background2.jpg" sur les côtés */
 .fond-photos {
-    background-image: url('images/background2.jpg') !important; /* Vérifie bien le nom (.jpg ou .png) */
+    background-image: url('images/background2v.jpg') !important; /* Vérifie bien le nom (.jpg ou .png) */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* L'image reste fixe quand on scrolle */
