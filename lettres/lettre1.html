@@ -15,7 +15,8 @@
     <style>
         /* --- STYLE SPÉCIAL POUR CETTE PAGE --- */
         .container {
-            /* C'EST ICI LE CHANGEMENT : On met ta nouvelle image */
+            /* C'est l'image au CENTRE (derrière le texte) */
+            /* Vérifie bien si ton image est .png ou .jpg sur GitHub */
             background-image: url('../images/couple_nuit.png');
             background-size: cover;
             background-position: center;
@@ -36,7 +37,7 @@
 
         .back-link-box {
             display: inline-block;
-            background-color: rgba(255, 255, 255, 0.8); /* Un peu plus opaque pour bien voir sur le fond sombre */
+            background-color: rgba(255, 255, 255, 0.8); /* Un peu plus opaque */
             padding: 8px 15px;
             border-radius: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -62,7 +63,7 @@
         
         .title-box {
             display: inline-block;
-            background-color: rgba(255, 255, 255, 0.8); /* Plus opaque */
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 10px 25px;
             border-radius: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -82,10 +83,10 @@
             font-family: 'Lora', serif;
             
             /* FOND BLANC POUR LE TEXTE */
-            background-color: rgba(255, 255, 255, 0.85); /* Plus opaque pour que le texte soit bien lisible */
-            padding: 30px; /* Espace à l'intérieur de la carte */
-            border-radius: 20px; /* Coins arrondis */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Légère ombre */
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .text-content p { margin-bottom: 20px; }
@@ -99,7 +100,8 @@
         }
     </style>
 </head>
-<body>
+
+<body class="fond-photos">
     <div class="container">
         
         <div class="top-bar">
