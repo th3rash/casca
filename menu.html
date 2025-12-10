@@ -7,15 +7,14 @@
     <link rel="stylesheet" href="style.css">
 
     <script>
-        // Si le ticket n'existe pas...
         if (!sessionStorage.getItem("access_granted")) {
-            // ... on renvoie la personne à l'accueil direct !
             window.location.href = "index.html";
         }
     </script>
 </head>
 <body>
     <div class="container">
+        
         <div class="header-container">
             <img src="images/avatar.png" alt="Nous" class="avatar-img">
             <h1>💌 Mes lettres pour toi</h1>
@@ -24,11 +23,11 @@
 
         <div class="letter-list">
             <a href="lettres/lettre1.html" class="letter-btn">Lettre N°1 : Un Rêve Silencieux 🌙</a>
-
             <a href="#" class="letter-btn">SOON...</a>
             <a href="#" class="letter-btn">SOON...</a>
             <a href="#" class="letter-btn">SOON...</a>
         </div>
+        
     </div>
 </body>
 </html>
