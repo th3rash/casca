@@ -15,9 +15,11 @@ body {
     min-height: 100vh;
 }
 
-/* --- 1. LE GRAND FOND (Image du couple) --- */
+/* --- 1. LE GRAND FOND (Image du couple / Mur de photos) --- */
 .container {
-    background-image: url('images/papier.png');
+    /* C'EST ICI LE CHANGEMENT : On met ton nouveau fond avec les photos */
+    background-image: url('images/background2.png');
+    
     background-size: cover;
     background-position: center;
     
@@ -36,7 +38,7 @@ body {
     margin-top: 30px;
 }
 
-/* --- 2. LA CARTE BLANCHE UNIQUE (C'est ça que tu voulais !) --- */
+/* --- 2. LA CARTE BLANCHE UNIQUE (Pour le menu) --- */
 .white-card {
     background-color: rgba(255, 255, 255, 0.85); /* Fond blanc unique */
     border-radius: 20px;
