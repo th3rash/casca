@@ -15,20 +15,20 @@ body {
     min-height: 100vh;
 }
 
-/* --- LE GRAND CADRE (Juste l'image, pas de blanc !) --- */
+/* --- LE GRAND CADRE (IMAGE DE FOND) --- */
 .container {
-    /* L'image est affichée pure, sans voile blanc par-dessus */
+    /* L'image du couple */
     background-image: url('images/papier.png');
     background-size: cover;
     background-position: center;
     
-    /* On enlève tous les filtres pour que l'image claque */
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     
-    padding: 40px; /* Un peu d'espace autour */
+    /* On laisse un peu de marge autour de la carte blanche */
+    padding: 20px; 
     border-radius: 30px;
-    box-shadow: 0 15px 40px rgba(190, 18, 60, 0.2); /* Ombre un peu plus marquée */
+    box-shadow: 0 15px 40px rgba(190, 18, 60, 0.2);
     text-align: center;
     
     max-width: 650px;
@@ -38,29 +38,40 @@ body {
     margin-top: 30px;
 }
 
-/* --- ÎLOT 1 : L'EN-TÊTE (Fond blanc semi-transparent) --- */
-.header-container {
-    /* C'est ici qu'on gère la lisibilité du titre */
-    background-color: rgba(255, 255, 255, 0.85); /* Blanc à 85% d'opacité */
-    padding: 20px;
+/* --- NOUVEAU : LA CARTE BLANCHE UNIQUE (Fusionnée) --- */
+.inner-card {
+    background-color: rgba(255, 255, 255, 0.85); /* Le fond blanc unique */
     border-radius: 20px;
-    margin-bottom: 20px; /* Espace entre le titre et la liste */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    
+    /* Pour que tout s'aligne bien */
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- ÎLOT 2 : LA LISTE (Fond blanc semi-transparent) --- */
+/* --- EN-TÊTE (Sans fond, car il est dans la carte) --- */
+.header-content {
+    margin-bottom: 10px;
+}
+
+/* --- LA LISTE (Sans fond, car elle est dans la carte) --- */
 .letter-list {
-    /* On met aussi un fond derrière la liste pour bien voir les boutons */
-    background-color: rgba(255, 255, 255, 0.85); /* Blanc à 85% d'opacité */
-    padding: 15px;
-    border-radius: 20px;
+    background-color: transparent; /* Transparent pour se fondre */
+    padding: 5px;
     
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-height: 180px;
+    
+    /* La zone de scroll */
+    max-height: 200px; 
     overflow-y: auto;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    
+    /* Petite marge en haut pour séparer du titre */
+    margin-top: 10px;
+    border-top: 1px solid rgba(190, 18, 60, 0.1); /* Petit trait fin de séparation élégant */
+    padding-top: 15px;
 }
 
 /* --- L'AVATAR --- */
@@ -71,8 +82,8 @@ body {
     border: 4px solid white;
     box-shadow: 0 5px 15px rgba(190, 18, 60, 0.2);
     object-fit: cover;
-    /* On le fait sortir un peu du cadre blanc vers le haut */
-    margin-top: -60px; 
+    /* On le fait sortir un peu vers le haut */
+    margin-top: -75px; 
     margin-bottom: 10px;
     background-color: white;
 }
@@ -91,7 +102,7 @@ body {
     width: 90%;
 }
 
-/* --- RESTE DU STYLE (TEXTES, BOUTONS...) --- */
+/* --- RESTE DU STYLE --- */
 h1 {
     font-family: 'Great Vibes', cursive;
     color: #be123c;
@@ -105,7 +116,7 @@ p {
     color: #57534e;
     line-height: 1.5;
     font-size: 1.1em;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .hint-message {
