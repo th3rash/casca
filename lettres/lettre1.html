@@ -15,8 +15,7 @@
     <style>
         /* --- STYLE SPÉCIAL POUR CETTE PAGE --- */
         .container {
-            /* C'est l'image au CENTRE (derrière le texte) */
-            /* Vérifie bien si ton image est .png ou .jpg sur GitHub */
+            /* Image de fond au centre (Nuit) */
             background-image: url('../images/couple_nuit.png');
             background-size: cover;
             background-position: center;
@@ -24,20 +23,19 @@
             -webkit-backdrop-filter: none;
             color: #2c2c2c;
             
-            /* Permet de bien gérer les espacements */
             display: flex;
             flex-direction: column;
         }
 
-        /* 1. LA BULLE DU BOUTON RETOUR (En haut à gauche) */
+        /* 1. BOUTON RETOUR */
         .top-bar {
-            text-align: left; /* Force le bouton à aller à gauche */
+            text-align: left;
             margin-bottom: 10px;
         }
 
         .back-link-box {
             display: inline-block;
-            background-color: rgba(255, 255, 255, 0.8); /* Un peu plus opaque */
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 8px 15px;
             border-radius: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -55,7 +53,7 @@
             font-size: 0.9em;
         }
 
-        /* 2. LA BULLE DU TITRE */
+        /* 2. TITRE */
         .title-wrapper {
             text-align: center;
             margin-bottom: 20px;
@@ -75,14 +73,12 @@
             color: #be123c;
         }
 
-        /* 3. LA CARTE DU TEXTE (Le fond derrière la lettre) */
+        /* 3. CARTE DU TEXTE */
         .text-content {
             text-align: justify;
             font-size: 1.15em;
             line-height: 1.9;
             font-family: 'Lora', serif;
-            
-            /* FOND BLANC POUR LE TEXTE */
             background-color: rgba(255, 255, 255, 0.85);
             padding: 30px;
             border-radius: 20px;
@@ -97,6 +93,16 @@
             font-family: 'Great Vibes', cursive;
             font-size: 2em;
             color: #be123c;
+        }
+
+        /* --- NOUVEAU : STYLE DE LA DATE --- */
+        .date-line {
+            text-align: right;      /* Aligné à droite comme la signature */
+            font-size: 0.8em;       /* Plus petit */
+            color: #881337;         /* Couleur bordeaux discret */
+            font-style: italic;     /* En italique */
+            margin-top: 5px;        /* Un petit espace après la signature */
+            opacity: 0.8;           /* Légèrement transparent */
         }
     </style>
 </head>
@@ -126,6 +132,10 @@
             
             <div class="signature">
                 Rachid
+            </div>
+
+            <div class="date-line">
+                Écrit le 16 novembre 2025
             </div>
         </div>
 
