@@ -5,41 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lettre 1</title>
     <link rel="stylesheet" href="../style.css">
-    <style>
-        .text-content {
-            text-align: justify;
-            margin-top: 25px;
-            font-size: 1.15em;
-            line-height: 1.8;
-            color: #4a4a4a;
-            font-family: 'Lora', serif;
+
+    <script>
+        if (!sessionStorage.getItem("access_granted")) {
+            window.location.href = "../index.html";
         }
-        .text-content p { margin-bottom: 20px; }
+    </script>
+
+    <style>
+        /* --- STYLE SPÉCIAL POUR CETTE LETTRE --- */
+        .container {
+            /* On utilise l'image du papier ancien */
+            background-image: url('../images/papier.jpg');
+            background-size: cover;
+            background-position: center;
+            /* Pas de flou pour bien voir la texture du papier */
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            color: #2c2c2c; /* Texte foncé pour être lisible */
+        }
+
+        /* NOUVEAU : Boîte pour le lien "Retour" */
+        .back-link-box {
+            display: inline-block; /* Pour que la boîte s'adapte à la taille du texte */
+            background-color: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
+            padding: 5px 15px; /* Un peu d'espace autour */
+            border-radius: 15px; /* Bords arrondis */
+            margin-bottom: 20px; /* Espace sous le bouton */
+        }
+
         .back-link {
-            display: block;
-            text-align: left;
-            margin-bottom: 10px;
-            color: #be123c;
             text-decoration: none;
+            color: #be123c;
             font-weight: bold;
             font-size: 0.9em;
             transition: color 0.3s;
         }
-        .back-link:hover { color: #881337; text-decoration: underline; }
+        .back-link:hover { color: #881337; }
+
+        /* NOUVEAU : Boîte pour le Titre */
+        .title-box {
+            background-color: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
+            padding: 15px; /* Espace autour du titre */
+            border-radius: 20px; /* Bords arrondis */
+            margin-bottom: 25px; /* Espace sous le titre */
+            display: inline-block; /* Le titre prend juste la place qu'il faut */
+        }
+
+        h1 {
+            margin: 0; /* On enlève les marges par défaut du h1 pour qu'il soit bien centré dans sa boîte */
+            font-size: 2.5em; /* Taille du titre */
+        }
+
+        .text-content {
+            text-align: justify;
+            margin-top: 0; /* Plus besoin de marge ici */
+            font-size: 1.15em;
+            line-height: 1.9;
+            font-family: 'Lora', serif;
+            /* Le style "carte" est déjà dans style.css, pas besoin de le remettre ici */
+        }
+
+        .text-content p { margin-bottom: 20px; }
+
         .signature {
             text-align: right;
             margin-top: 40px;
             font-family: 'Great Vibes', cursive;
-            font-size: 1.8em;
+            font-size: 2em;
             color: #be123c;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="../menu.html" class="back-link">← Retour</a>
+        
+        <div class="back-link-box" style="text-align: left;">
+            <a href="../menu.html" class="back-link">← Retour</a>
+        </div>
 
-        <h1>Un Rêve Silencieux</h1>
+        <div>
+            <div class="title-box">
+                <h1>Un Rêve Silencieux</h1>
+            </div>
+        </div>
 
         <div class="text-content">
             <p>
@@ -48,9 +97,8 @@
             <p>
                 Les heures s’étirent et les nuits me semblent interminables, creusées d’un vide que rien ne comble. Pourtant, c’est toi qui gardes ma lumière vivante, toi qui m’offres la force de continuer. J’espère qu’un jour, peut-être, ce rêve que je porte en silence trouvera enfin le chemin de la réalité, et que nos deux âmes n’auront plus à se chercher.
             </p>
-            
             <div class="signature">
-                Rachid
+                Ton copain
             </div>
         </div>
     </div>
